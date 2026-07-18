@@ -3,11 +3,11 @@ import {
   AssessmentOutlined,
   AssignmentReturnOutlined,
   DashboardOutlined,
+  ImageOutlined,
   Inventory2Outlined,
   LocalShippingOutlined,
   PaymentsOutlined,
   PersonOutlined,
-  StorefrontOutlined,
 } from "@mui/icons-material";
 
 import {
@@ -31,14 +31,14 @@ const menuItems = [
     icon: <DashboardOutlined />,
   },
   {
-    label: "Catalogs",
-    path: "/supplier/catalogs",
-    icon: <StorefrontOutlined />,
-  },
-  {
     label: "Catalog Uploads",
     path: "/supplier/catalog-uploads",
     icon: <AddBoxOutlined />,
+  },
+  {
+    label: "Image Bulk Uploads",
+    path: "/supplier/image-bulk-uploads",
+    icon: <ImageOutlined />,
   },
   {
     label: "Orders",

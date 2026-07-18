@@ -259,6 +259,7 @@ export default function CatalogUploadsPage() {
           </Button>
 
           <Button
+            onClick={() => navigation("/supplier/single-catalog-uploads")}
             variant="outlined"
             size="large"
             sx={{
