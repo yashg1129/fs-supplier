@@ -1,0 +1,50 @@
+import {
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+import SupplierLayout from "../components/layout/SupplierLayout";
+
+import AddProductPage from "../pages/AddProductPage";
+import CatalogPage from "../pages/CatalogPage";
+import DashboardPage from "../pages/DashboardPage";
+import InventoryPage from "../pages/InventoryPage";
+import OrdersPage from "../pages/OrdersPage";
+import PaymentsPage from "../pages/PaymentsPage";
+import ReportsPage from "../pages/ReportsPage";
+import ReturnsPage from "../pages/ReturnsPage";
+import SupplierProfilePage from "../pages/SupplierProfilePage";
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={<Navigate to="/supplier/dashboard" replace />}
+      />
+
+      <Route path="/supplier" element={<SupplierLayout />}>
+        <Route
+          index
+          element={<Navigate to="dashboard" replace />}
+        />
+
+        <Route path="dashboard" element={<DashboardPage />} />
+        <Route path="catalogs" element={<CatalogPage />} />
+        <Route path="add-product" element={<AddProductPage />} />
+        <Route path="orders" element={<OrdersPage />} />
+        <Route path="inventory" element={<InventoryPage />} />
+        <Route path="payments" element={<PaymentsPage />} />
+        <Route path="returns" element={<ReturnsPage />} />
+        <Route path="reports" element={<ReportsPage />} />
+        <Route path="profile" element={<SupplierProfilePage />} />
+      </Route>
+
+      <Route
+        path="*"
+        element={<Navigate to="/supplier/dashboard" replace />}
+      />
+    </Routes>
+  );
+}
