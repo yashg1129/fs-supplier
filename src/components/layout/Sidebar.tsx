@@ -36,8 +36,8 @@ const menuItems = [
     icon: <StorefrontOutlined />,
   },
   {
-    label: "Add Product",
-    path: "/supplier/add-product",
+    label: "Catalog Uploads",
+    path: "/supplier/catalog-uploads",
     icon: <AddBoxOutlined />,
   },
   {

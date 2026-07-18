@@ -42,12 +42,12 @@ export default function MetricCard({ metric }: MetricCardProps) {
             <Typography
               variant="body2"
               color="text.secondary"
-              fontWeight={600}
+              sx={{ fontWeight: 600 }}
             >
               {metric.title}
             </Typography>
 
-            <Typography variant="h4" fontWeight={800} sx={{ my: 1 }}>
+            <Typography variant="h4" sx={{ fontWeight: 800, my: 1 }}>
               {metric.value}
             </Typography>
 
