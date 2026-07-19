@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { loginSeller } from "../../services/authService";
+
 import {
   VisibilityOutlined,
   VisibilityOffOutlined,
@@ -23,7 +25,6 @@ interface LoginForm {
 
 export default function SupplierLoginPage() {
   const navigate = useNavigate();
-
   const [form, setForm] = useState<LoginForm>({
     username: "",
     password: "",
@@ -67,20 +68,10 @@ export default function SupplierLoginPage() {
 
       console.log("Login request:", form);
 
-      
-      const response = await axios.post(
-        "http://localhost:8081/auth/login",
-        {
-          username: form.username,
-          password: form.password,
-        },
-      );
-
-      localStorage.setItem(
-        "accessToken",
-        response.data.accessToken,
-      );
-      
+      await loginSeller({
+        email: form.username,
+        password: form.password,
+      });
 
       await new Promise((resolve) => setTimeout(resolve, 700));
 
